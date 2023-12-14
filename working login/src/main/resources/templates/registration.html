@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous">
+    <style>
+        body {
+          background-image: url('https://images.pexels.com/photos/6985001/pexels-photo-6985001.jpeg?auto=compress&cs=tinysrgb&w=1600');
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+
+          height: 100vh; /* Make the body take the full height of the viewport */
+          margin: 0; /* Remove default margin */
+        }
+
+        .registration-box {
+          background-color: #fff; /* White background color */
+          padding: 20px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a subtle box shadow */
+          border-radius: 5px; /* Add rounded corners */
+          width: auto; /* Set the width of the box */
+        }
+        .button.cell {
+              background-image: url('https://images.pexels.com/photos/6985001/pexels-photo-6985001.jpeg?auto=compress&cs=tinysrgb&w=1600');
+              background-size: cover;
+              background-position: center;
+              background-size: auto;
+              color: #fff;
+              /* Additional styles for the button */
+          }
+      .border1{
+          border-radius: 5px;
+      }
+
+    </style>
+</head>
+<body>
+
+
+<div class="registration-box">
+    <h3 class="text-center">Registration Form</h3>
+    <form  th:action="@{/save}" th:object="${user}" method="post">
+
+        <div class="grid-x align-center-middle">
+        <div class="grid-container">
+        <input name="id" th:field="*{id}" hidden>
+            <label >First Name</label>
+        <input placeholder="First Name" class="textbox" name="firstName" th:field="*{firstName}"/>
+        </div>
+        <div class="grid-container textbox">
+            <label >Last Name</label>
+        <input placeholder="Last Name" name="lastName" th:field="*{lastName}"/>
+        </div>
+        </div>
+        <div class="grid-x align-center-middle">
+        <div class="grid-container textbox">
+            <label >Email Address</label>
+        <input placeholder="Email" name="email" th:field="*{email}"/>
+        </div>
+        <div class="grid-container textbox">
+            <label >Username</label>
+        <input placeholder="Username" name="username" th:field="*{username}"/>
+        </div>
+        </div>
+        <div class="grid-x align-center-middle">
+        <div class="grid-container textbox">
+            <label >Password</label>
+        <input placeholder="Password" name="password" th:field="*{password}"/>
+        </div>
+        <div class="grid-container textbox">
+            <label >Confirm Password</label>
+        <input placeholder="Confirm Password"  required/>
+        </div>
+        </div>
+        <input name="role" th:field="*{role}" hidden>
+        <div class="grid-x grid-container">
+            <fieldset>
+
+                <label>Gender</label>
+                <div class="form-group row">
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male"><label class="form-check-label" for="inlineRadio1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender"
+                               id="inlineRadio2" value="female"><label
+                            class="form-check-label" for="inlineRadio2">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender"
+                               id="inlineRadio3" value="Not_prefered_to_say"><label
+                            class="form-check-label" for="inlineRadio3">Not prefered to say</label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <button type="submit" class="button cell">Submit</button>
+    </form>
+    <div class="text-center">
+        <h6> Already Registered? <a th:href="@{/login}" class="btn">Login Now</a></h6>
+    </div>
+</div>
+
+
+
+</body>
+</html>

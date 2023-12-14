@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous">
+    <style>
+        body {
+          background-image: url('https://images.pexels.com/photos/6985001/pexels-photo-6985001.jpeg?auto=compress&cs=tinysrgb&w=1600');
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+
+          height: 100vh; /* Make the body take the full height of the viewport */
+          margin: 0; /* Remove default margin */
+        }
+
+        .registration-box {
+          background-color: #fff; /* White background color */
+          padding: 20px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a subtle box shadow */
+          border-radius: 5px; /* Add rounded corners */
+          width: auto; /* Set the width of the box */
+        }
+        .button.cell {
+              background-image: url('https://images.pexels.com/photos/6985001/pexels-photo-6985001.jpeg?auto=compress&cs=tinysrgb&w=1600');
+              background-size: cover;
+              background-position: center;
+              background-size: auto;
+              color: #fff;
+              /* Additional styles for the button */
+          }
+      .border1{
+          border-radius: 5px;
+      }
+
+    </style>
+</head>
+<body>
+<div class="registration-box">
+    <h1>Login page</h1>
+
+    <div>
+        <form action="/userLogin"  method="post">
+            <p>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Username" required autofocus>
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </p>
+            <button type="submit" class="button cell">Login</button>
+        </form>
+    </div>
+    <div>
+        <h6>Don't have an account?<a th:href="@{/register}">SignUp</a></h6>
+    </div>
+    <a href="/forgot_password">Forgot Password?</a>
+</div>
+</body>
+</html>
