@@ -14,7 +14,7 @@ This project is a Spring Boot application with user authentication and password 
 To create the project, follow these steps:
 
 1. Go to [https://start.spring.io/](https://start.spring.io/) and generate a project with the following settings:
-   - Project: Maven/Gradle
+   - Project: Maven
    - Language: Java
    - Spring Boot: 3.2.0
    - Dependencies: Java Mail Sender, Spring Web, Spring Security, Dev Tools, Starter Validation, MySQL Driver, Spring Data JPA
